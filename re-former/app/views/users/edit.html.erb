@@ -1,0 +1,7 @@
+<%= form_for User.find(params[:id]) do |f| %>
+        Username: <%= f.text_field :username %><br>
+        Email: <%= f.text_field :email, placeholder: 'example@example.com' %><br>
+        Password: <%= f.password_field :password %><br>
+        Confirm Password: <%= f.password_field :password_confirmation %><br>
+        <%= f.submit %>
+<% end %>

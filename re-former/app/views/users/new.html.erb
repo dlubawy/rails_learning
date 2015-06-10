@@ -1,0 +1,19 @@
+<%= form_for User.new do |f| %>
+        Username: <%= f.text_field :username %><br>
+        Email: <%= f.text_field :email, placeholder: 'example@example.com' %><br>
+        Password: <%= f.password_field :password %><br>
+        Confirm Password: <%= f.password_field :password_confirmation %><br>
+        <%= f.submit %>
+<% end %>
+
+<!--
+<form action="/users" method="post" accept-charset="utf-8">
+        <label for="Username">Username: </label><input type="text" name="user[username]" id="user_username"><br>
+        <label for="Email">Email: </label><input type="text" name="user[email]" id="user_email"><br>
+        <label for="Password">Password: </label><input type="password" name="user[password]" id="user_password"><br>
+        <label for="Confirm_Password">Confirm Password: </label><input type="password" name="user[password_confirmation]" id="user_password_confirmation"><br>
+        <input type="hidden" value="<= form_authenticity_token %>" name="authenticity_token"/>
+
+        <p><input type="submit" value="Continue →"></p>
+</form>
+-->
