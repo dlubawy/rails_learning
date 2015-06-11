@@ -9,8 +9,9 @@
     <%= render 'layouts/shim' %>
   </head>
   <body>
+    <%= flash_messages %>
     <%= render 'layouts/header' %>
-    <div class="container">
+  <div class="container">
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>
