@@ -1,5 +1,7 @@
 <footer class="footer">
+  <% if signed_in? %>      
   <small>
     <%= link_to "Logout", logout_path, method: "delete" %>
   </small>
+  <% end %>
 </footer>
