@@ -1,4 +1,4 @@
-Creator: <%= @event.creator.name %>
+<h2>Creator: <%= link_to @event.creator.name, user_path(@event.creator.id) %></h2>
 
 <h3>Attendees</h3>
 <% @event.attendees.each do |attendee| %>

@@ -8,7 +8,11 @@
         <%= event.location %>
 <% end %>
 
+<h2>Upcoming Events</h2>
+<% @user.upcoming_events.each do |event| %>
+        <h3><%= event.name %></h3>
+<% end %>
 <h2>Attended Events</h2>
-<% @user.attended_events.each do |event| %>
+<% @user.previous_events.each do |event| %>
         <h3><%= event.name %></h3>
 <% end %>

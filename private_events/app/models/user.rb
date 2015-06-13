@@ -8,6 +8,26 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true, length: {maximum: 20}
 
+  def attending?(event)
+    event.attendees.include?(self)
+  end
+
+  def attend!(event)
+    self.invites.create!(attended_event_id: event.id)
+  end
+
+  def cancel!(event)
+    self.invites.find_by(attended_event_id: event.id).destroy
+  end
+
+  def upcoming_events
+    self.attended_events.upcoming
+  end
+
+  def previous_events
+    self.attended_events.past
+  end
+
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
