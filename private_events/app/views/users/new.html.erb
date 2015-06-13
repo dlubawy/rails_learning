@@ -1,0 +1,7 @@
+<%= form_for(@user) do |f| %>
+        <div class="field">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+        </div>
+        <%= f.submit "Save", class: "btn btn-primary" %>
+<% end %>
