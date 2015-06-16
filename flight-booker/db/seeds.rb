@@ -1,7 +1,26 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# Airports
+Airport.create!(airport_code: "SFO")
+Airport.create!(airport_code: "NYC")
+
+# Flights
+25.times do |n|
+  to_airport_id = Airport.find(1).id
+  from_airport_id = Airport.find(2).id
+  datetime = Faker::Time.between(Time.new(2015), Time.new(2016))
+  duration = 4 + Random.rand(4)
+  Flight.create!(to_airport_id: to_airport_id,
+                 from_airport_id: from_airport_id,
+                 datetime: datetime,
+                 duration: duration)
+end
+
+25.times do |n|
+  to_airport_id = Airport.find(2).id
+  from_airport_id = Airport.find(1).id
+  datetime = Faker::Time.between(Time.new(2015), Time.new(2016))
+  duration = 4 + Random.rand(4)
+  Flight.create!(to_airport_id: to_airport_id,
+                 from_airport_id: from_airport_id,
+                 datetime: datetime,
+                 duration: duration)
+end

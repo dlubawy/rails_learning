@@ -1,0 +1,8 @@
+<%= form_tag(root_path, method: 'get') do %>
+    <%= hidden_field_tag :search %>
+    From: <%= select_tag :from, options_for_select(@airport_codes, params[:from]) %>
+    To: <%= select_tag :to, options_for_select(@airport_codes, params[:to]) %>    
+    Number of passengers: <%= select_tag :num_passengers, options_for_select(@num_passengers, params[:num_passengers]) %>
+    Dates: <%= select_tag :date, options_for_select(@dates, params[:date]) %>
+    <%= submit_tag "Search", name: nil %>
+<% end %>
