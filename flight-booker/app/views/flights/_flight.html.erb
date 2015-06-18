@@ -1,0 +1,4 @@
+<%= radio_button_tag 'flight_id', flight.id %>
+<%= "From: #{flight.from_airport.airport_code} - To: #{flight.to_airport.airport_code}" %><br>
+<%= "Depart: #{flight.datetime.to_formatted_s(:long)} - Duration: #{time_ago_in_words((flight.duration * 60*60).seconds.from_now)}" %>
+<hr>
