@@ -1,0 +1,12 @@
+<h1>Flickr App</h1>
+
+<%= form_tag(home_path, method: :get) do %>
+    <%= label_tag(:id, "Flickr ID:") %>
+    <%= text_field_tag(:id) %>
+    <%= submit_tag("Submit") %>
+<% end %>
+
+<% if @id %>
+    <h2><%= "Photos for user #{@id}" %></h2>
+    <%= render_flickr_widget(@id) %>
+<% end %>
