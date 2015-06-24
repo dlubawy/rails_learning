@@ -1,0 +1,10 @@
+<%= simple_form_for @kitten do |f| %>
+    <%= f.input :name, input_html: {maxlength: 20} %>
+    <%= f.input :age, collection: 1..30 %>
+    <%= f.input :cuteness, collection: 1..10 %>
+    <%= f.input :softness, collection: 1..10 %>
+    <%= f.button :submit %>
+    <% if !@kitten.id.nil? %>
+        <%= button_to "Delete", kitten_path(@kitten), method: :delete, class: "btn btn-danger" %>
+    <% end %>
+<% end %>
